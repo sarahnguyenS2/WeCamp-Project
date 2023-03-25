@@ -1,0 +1,64 @@
+// UI
+const registerButton = document.querySelector("#register");
+const loginButton = document.querySelector("#login");
+const container = document.querySelector("#container");
+
+registerButton.addEventListener("click", () => {
+  container.classList.add("right-panel-active");
+});
+
+loginButton.addEventListener("click", () => {
+  container.classList.remove("right-panel-active");
+});
+
+//Function
+
+// Register function
+function resigterFunction(e) {
+  event.preventDefault();
+
+  const username = document.querySelector("#name").value;
+  const email = document.querySelector("#register-email").value;
+  const password = document.querySelector("#register-password").value;
+
+  const user = {
+    username: username,
+    email: email,
+    password: password,
+  };
+
+  let json = JSON.stringify(user);
+  localStorage.setItem(email, json);
+  console.log("user added")
+}
+// End register function
+
+// Login function
+function loginFunction(e) {
+  event.preventDefault();
+
+  const email = document.querySelector("#email").value;
+  const password = document.querySelector("#password").value;
+  const passwordNode = document.querySelector("#password");
+  // const emailError = document.querySelector("#email-error");
+  // const passwordError = document.querySelector("#password-error");
+
+  const user = localStorage.getItem(email);
+  const data = JSON.parse(user);
+  console.log(data);
+
+  if(user == null) {
+    const emailError = document.createElement("p");
+    const text = document.createTextNode("*Wrong email");
+    emailError.appendChild(text);
+    emailError.id = "email-error";
+    const element = document.querySelector(".form");
+    element.insertBefore(emailError,passwordNode);
+
+  } else if (email == data.email && password == data.passwordNode) {
+    error.innerHTML = "Logged in"
+  } else {
+    passwordError.innerHTML = "*Wrong password"
+  }
+}
+// End login function

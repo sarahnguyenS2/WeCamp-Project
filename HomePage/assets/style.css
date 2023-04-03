@@ -2,6 +2,7 @@
   --green: #82ae46;
 }
 * {
+  padding: 0;
   box-sizing: border-box;
   margin: 0;
   font-family: "Poppins", Arial, sans-serif;
@@ -40,6 +41,7 @@ a {
 .flex-justify {
   justify-items: center;
   justify-content: center;
+  text-align: center;
 }
 .header {
   justify-content: space-between;
@@ -52,18 +54,62 @@ a {
   font-weight: 800;
   font-size: 20px;
 }
-ul > li {
+li {
   list-style-type: none;
   color: #000000;
 }
+.header-nav .nav-active,
+.nav li > a:hover {
+  color: #82ae46;
+}
 
 .header-nav li a {
-  font-size: 11px;
-  font-size: 11px;
-  padding: 24px 20px;
+  font-size: 14px;
+  padding: 16px 20px;
   font-weight: 400;
   color: #000000;
   letter-spacing: 2px;
+}
+.account {
+  background-color: #565555;
+  margin-right: 2px;
+  border-radius: 5px;
+}
+.login:hover .login-box {
+  visibility: inherit;
+}
+.login {
+  position: relative;
+}
+.login-box li {
+  padding: 14px 10px;
+  border-bottom: 1px solid var(--green);
+  width: 180px;
+  cursor: pointer;
+}
+.login-box li:hover {
+  background-color: #f7f6f2;
+}
+.login-box li a {
+  font-size: 12px;
+}
+.login-box {
+  position: absolute;
+  visibility: hidden;
+  top: 45px;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid var(--green);
+  right: 0;
+  transition: all 0.5s ease;
+}
+.cart {
+  background-color: var(--green);
+  color: white;
+  border-radius: 5px;
+}
+.cart i {
+  color: whitesmoke;
 }
 .hero-banner {
   background-image: url(./imgs/banner.jpeg);
@@ -130,6 +176,7 @@ ul > li {
 .about {
   background-color: #f7f6f2;
   max-height: 100%;
+  margin-bottom: 6rem;
 }
 .about-img img {
   max-width: 100%;

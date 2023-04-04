@@ -77,6 +77,7 @@ li {
 }
 .login:hover .login-box {
   visibility: inherit;
+  overflow: hidden;
 }
 .login {
   position: relative;
@@ -112,7 +113,7 @@ li {
   color: whitesmoke;
 }
 .hero-banner {
-  background-image: url(./imgs/banner.jpeg);
+  background-image: url(/WeCamp-Project/Assets/banner.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
   height: 650px;
@@ -121,7 +122,7 @@ li {
   justify-content: center;
 }
 .hero-banner-about {
-  background-image: url(./imgs/about.jpeg);
+  background-image: url(/WeCamp-Project/Assets/about.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;

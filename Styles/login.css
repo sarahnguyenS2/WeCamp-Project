@@ -1,5 +1,5 @@
  :root {
-  --primary: #19b361;
+  --primary: #82ae46;
   --grey: #f6f5f7;
   --dark: #333;
   --white: #fff;
@@ -263,7 +263,7 @@ input {
 }
 
 .overlay {
-  background-image: url(./assets/bg_11.jpg);
+  background-image: url(/WeCamp-Project/Assets/background-login.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 0;

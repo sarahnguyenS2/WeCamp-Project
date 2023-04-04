@@ -1,4 +1,13 @@
-const productApi = "https://drab-plum-oyster-hat.cyclic.app/products/2";
+// const productButton = document.querySelector(".details")
+// productButton.addEventListener("click", () => {
+//     currentId = productButton.id;
+//     console.log("hello")
+//     // window.location.assign("product-detail.html");
+// })
+
+var searchParams = new URLSearchParams(window.location.search);
+
+const productApi = `https://drab-plum-oyster-hat.cyclic.app/products/${searchParams.get('id')}`;
 const productContainer = document.querySelector(".product")
 
 fetch(productApi)

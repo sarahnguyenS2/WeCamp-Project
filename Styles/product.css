@@ -38,8 +38,10 @@
   /* margin: 3rem 0; */
   border: 1px solid #f0f0f0;
 }
+
 .product-img {
-  object-fit: cover;
+  object-fit: scale-down;
+  height: 300px;
   width: 80%;
   margin: 1rem 0;
 }

@@ -10,9 +10,9 @@ registerButton.addEventListener("click", () => {
 loginButton.addEventListener("click", () => {
   container.classList.remove("right-panel-active");
 });
+// End UI
 
 //Function
-
 // Register function
 function resigterFunction(e) {
   event.preventDefault();
@@ -20,16 +20,22 @@ function resigterFunction(e) {
   const username = document.querySelector("#name").value;
   const email = document.querySelector("#register-email").value;
   const password = document.querySelector("#register-password").value;
+  const error = document.querySelector("#register-error");
 
   const user = {
     username: username,
     email: email,
     password: password,
+    status: false,
   };
 
-  let json = JSON.stringify(user);
-  localStorage.setItem(email, json);
-  console.log("user added")
+  if (localStorage.getItem(email)) {
+    error.classList.add("error");
+    error.innerHTML = "*User has already existed";
+  } else {
+    let json = JSON.stringify(user);
+    localStorage.setItem(email, json);
+  }
 }
 // End register function
 
@@ -39,26 +45,34 @@ function loginFunction(e) {
 
   const email = document.querySelector("#email").value;
   const password = document.querySelector("#password").value;
-  const passwordNode = document.querySelector("#password");
-  // const emailError = document.querySelector("#email-error");
-  // const passwordError = document.querySelector("#password-error");
 
   const user = localStorage.getItem(email);
   const data = JSON.parse(user);
-  console.log(data);
 
-  if(user == null) {
-    const emailError = document.createElement("p");
-    const text = document.createTextNode("*Wrong email");
-    emailError.appendChild(text);
-    emailError.id = "email-error";
-    const element = document.querySelector(".form");
-    element.insertBefore(emailError,passwordNode);
-
-  } else if (email == data.email && password == data.passwordNode) {
-    error.innerHTML = "Logged in"
+  const error = document.querySelector("#error");
+  if (user == null) {
+    error.classList.add("error");
+    error.innerHTML = "*Wrong email or password";
+  } else if (email == data.email && password == data.password) {
+    // console.log(currentUrl())
+    // if(currentUrl() == "home.html") {
+    //   window.location.assign("home.html")
+    // }
+    // else window.location.assign("checkout.html")
+    window.location.assign("home.html");
+    data.status = "true"
+    let json = JSON.stringify(data);
+    localStorage.setItem(email, json);
   } else {
-    passwordError.innerHTML = "*Wrong password"
+    error.classList.add("error");
+    error.innerHTML = "*Wrong email or password";
   }
 }
+
 // End login function
+
+console.log(localStorage.getItem(email))
+
+function data() {
+  return localStorage.getItem(email)
+}

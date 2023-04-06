@@ -10,10 +10,7 @@ registerButton.addEventListener("click", () => {
 loginButton.addEventListener("click", () => {
   container.classList.remove("right-panel-active");
 });
-// End UI
 
-//Function
-// Register function
 function resigterFunction(e) {
   event.preventDefault();
 
@@ -60,9 +57,10 @@ function loginFunction(e) {
     // }
     // else window.location.assign("checkout.html")
     window.location.assign("home.html");
-    data.status = "true"
+    data.status = "true";
     let json = JSON.stringify(data);
     localStorage.setItem(email, json);
+    sessionStorage.setItem("loginEmail", email);
   } else {
     error.classList.add("error");
     error.innerHTML = "*Wrong email or password";
@@ -71,8 +69,9 @@ function loginFunction(e) {
 
 // End login function
 
-console.log(localStorage.getItem(email))
+// console.log(localStorage.getItem(email))
 
-function data() {
-  return localStorage.getItem(email)
+//login UI after login
+const username1 = localStorage.name;
+if (username1) {
 }

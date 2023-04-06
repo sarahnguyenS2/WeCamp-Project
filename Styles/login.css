@@ -1,4 +1,4 @@
- :root {
+:root {
   --primary: #82ae46;
   --grey: #f6f5f7;
   --dark: #333;
@@ -7,7 +7,7 @@
   --danger: #ff4e4e;
 
   --text-shadow: 0 0 10px rgba(0, 169, 62, 0.582);
-  --box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0,0,0,0.22);
+  --box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 * {
@@ -22,7 +22,7 @@ body {
   align-items: center;
   flex-direction: column;
   background-color: var(--grey);
-  font-family: "Poppins";
+  font-family: "Poppins", "sans-serifs";
   overflow: hidden;
   height: 100vh;
 }
@@ -56,16 +56,18 @@ p {
   align-self: flex-start;
 } */
 
-p#error, p#register-error {
+p#error,
+p#register-error {
   display: none;
 }
 
-p#error.error, p#register-error.error{
+p#error.error,
+p#register-error.error {
   display: block;
   color: var(--danger);
   font-size: 12px;
   text-shadow: none;
-  margin:0 0 0 12px;
+  margin: 0 0 0 12px;
   align-self: flex-start;
 }
 
@@ -168,7 +170,6 @@ button.ghost:hover i.login {
   opacity: 1;
 }
 
-
 form {
   background-color: var(--white);
   display: flex;
@@ -189,7 +190,6 @@ input {
   width: 100%;
 }
 
-
 .container {
   background-color: var(--white);
   border-radius: 25px;
@@ -200,7 +200,6 @@ input {
   max-width: 100%;
   min-height: 500px;
 }
-
 
 .form-container {
   position: absolute;
@@ -263,7 +262,7 @@ input {
 }
 
 .overlay {
-  background-image: url(/WeCamp-Project/Assets/background-login.jpg);
+  background-image: url(/Assets/background-login.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 0;
@@ -309,7 +308,6 @@ input {
   transition: transform 0.6 ease-in-out;
 }
 
-
 .overlay-left {
   transform: translateX(-20%);
 }
@@ -345,4 +343,4 @@ input {
 
 .social-container a:hover {
   border: 1px solid var(--primary);
-} 
+}

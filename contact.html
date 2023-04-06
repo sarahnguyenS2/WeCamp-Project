@@ -17,7 +17,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./Styles/home.css" />
-    <link rel="stylesheet" href="./Styles/product.css" />
+    <link rel="stylesheet" href="./Styles/contact.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
@@ -59,89 +59,86 @@
         </div>
       </div>
     </header>
-
+    <!-- MAIN -->
     <!-- BANNER -->
     <main class="main">
       <section class="hero-banner-about d-flex relative">
         <div class="overlay absolute"></div>
         <div class="hero-content">
-          <h2 class="hero-about-h2">HOME PRODUCTS</h2>
-          <h1 class="hero-about-h1">PRODUCTS</h1>
+          <h2 class="hero-about-h2">HOME CONTACT US</h2>
+          <h1 class="hero-about-h1">CONTACT US</h1>
         </div>
       </section>
-      <!-- PRODUCTS -->
-      <section class="product-section">
+      <!-- CONTACT -->
+      <section class="contact">
         <div class="container">
-          <!-- btn category -->
-          <div class="d-flex flex-justify btn-container">
-            <button class="btn-category active" data-id="All" type="button">
-              All
-            </button>
-            <button class="btn-category" data-id="Vegetables" type="button">
-              Vegetables
-            </button>
-            <button class="btn-category" data-id="Fruits" type="button">
-              Fruits
-            </button>
-            <button class="btn-category" data-id="Juice" type="button">
-              Juice
-            </button>
-            <button class="btn-category" data-id="Dried" type="button">
-              Dried
-            </button>
-          </div>
-          <!-- products -->
-          <div class="product-container">
-            <!-- product detail -->
-          </div>
-          <div class="pagination">
-            <ul class="d-flex flex-justify pagination-list">
-              <li class="prev">
-                <a id="firstPage" data-page="1" href="">1</a>
-              </li>
-              <li class="next"><a data-page="2" href="">2</a></li>
-            </ul>
-          </div>
-        </div>
-      </section>
-      <!-- SERVICE -->
-      <section class="header-service">
-        <div class="container">
-          <div class="columns">
-            <div class="column">
-              <div class="service-icons d-flex flex-justify icons-1">
-                <i class="fa-solid fa-truck-fast icons"></i>
-              </div>
-              <div class="service-body">
-                <h3>FREE SHIPPING</h3>
-                <span>ON ORDER OVER $100</span>
-              </div>
+          <div class="d-flex contact-info">
+            <div class="info">
+              <p>
+                <span>Address:</span> 123 Dinh Tien Hoang, Da Kao Ward, District
+                1, HCM city, Vietnam
+              </p>
             </div>
-            <div class="column">
-              <div class="service-icons d-flex flex-justify icons-2">
-                <i class="fa-solid fa-pepper-hot icons"></i>
-              </div>
-              <div class="service-body">
-                <h3>ALWAYS FRESH</h3>
-                <span>PRODUCT WELL PACKAGE</span>
-              </div>
+
+            <div class="info">
+              <p>
+                <span>Phone:</span>
+                <a href="tel://1234567920"> 0908.237.823</a>
+              </p>
             </div>
-            <div class="column">
-              <div class="service-icons d-flex flex-justify icons-3">
-                <i class="fa-solid fa-medal icons"></i>
-              </div>
-              <div class="service-body">
-                <h3>SUPPERIOR QUALITY</h3>
-                <span>QUALITY PRODUCTS</span>
-              </div>
+
+            <div class="info">
+              <p>
+                <span>Email:</span>
+                <a href="mailto:info@yoursite.com"> Organicfood@gmail.com</a>
+              </p>
             </div>
-            <div class="column">
-              <div class="service-icons d-flex flex-justify icons-4">
-                <i class="fa-solid fa-phone-volume icons"></i>
-              </div>
-              <div class="service-body">
-                <h3>SUPPORT</h3>
-                <span>24/7 SUPPORT</span>
+
+            <div class="info">
+              <p><span>Website:</span> <a href="#">Organic.com</a></p>
+            </div>
+          </div>
+
+          <div class="d-flex contact-customer">
+            <img src="./Assets/map.png" alt="" />
+            <div class="customer">
+              <div>
+                <form action="#" class="contact-form">
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Your Name"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Your Email"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Subject"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <textarea
+                      class="form-control"
+                      placeholder="Message"
+                    ></textarea>
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="submit"
+                      value="Send Message"
+                      class="btn btn-green"
+                    />
+                  </div>
+                </form>
               </div>
             </div>
           </div>
@@ -222,7 +219,7 @@
       </footer>
     </main>
     <script src="./Functions/home.js"></script>
-    <script src="./Functions/product.js"></script>
+    <script src="./Functions/main.js"></script>
     <script src="./Functions/active.js"></script>
     <script src="./Functions/account.js"></script>
   </body>

@@ -1,5 +1,5 @@
 let loginEmail = sessionStorage.getItem("loginEmail");
-console.log(loginEmail);
+// console.log(loginEmail);
 if (loginEmail) {
   let loginData = getLocalData(loginEmail);
   if (loginData) {

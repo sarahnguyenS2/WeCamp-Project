@@ -58,9 +58,9 @@ fetch(productApi)
                     <option value="large">Large</option>
                 </select>
                 <div class="quantity">
-                    <input type="button" value="-" class="descrease-btn">
+                    <input type="button" value="-" class="descrease-btn buttons">
                     <input type="text" name="quantity" id="quantity" value="1" min="1">
-                    <input type="button" value="+" class="increase-btn">
+                    <input type="button" value="+" class="increase-btn buttons">
                 </div>
                 <p class="amount">${product.quantity} available</p>
                 <button type="submit" class="add-to-cart" onclick="addToCart()">Add to cart</button>
@@ -68,22 +68,42 @@ fetch(productApi)
         </div> 
         `;
     productContainer.innerHTML = htmls;
+    //increase/decrease quantity
+    const value = document.getElementById("quantity");
+    console.log(value.value);
+    let count = 0;
+    const quantityBtn = document.querySelectorAll(".buttons");
+    quantityBtn.forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        const styles = e.currentTarget.classList;
+        if (styles.contains("descrease-btn")) {
+          if (count <= 1) {
+            count = 1;
+          } else {
+            count--;
+          }
+        } else {
+          count++;
+        }
+        value.value = count;
+      });
+    });
   });
 
-  function addToCart() {
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const productIndex = cart.findIndex((item) => item.id === product.id);
-    if (productIndex !== -1) {
-      cart[productIndex].quantity += 1;
-    } else {
-      const newProduct = {
-        id: product.id,
-        name: product.title,
-        price: product.price,
-        quantity: 1,
-        img: product.img,
-      };
-      cart.push(newProduct);
-    }
-    localStorage.setItem("cart", JSON.stringify(cart));
+function addToCart() {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const productIndex = cart.findIndex((item) => item.id === product.id);
+  if (productIndex !== -1) {
+    cart[productIndex].quantity += 1;
+  } else {
+    const newProduct = {
+      id: product.id,
+      name: product.title,
+      price: product.price,
+      quantity: 1,
+      img: product.img,
+    };
+    cart.push(newProduct);
   }
+  localStorage.setItem("cart", JSON.stringify(cart));
+}

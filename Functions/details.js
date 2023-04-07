@@ -7,8 +7,10 @@
 
 var searchParams = new URLSearchParams(window.location.search);
 
-const productApi = `https://drab-plum-oyster-hat.cyclic.app/products/${searchParams.get('id')}`;
-const productContainer = document.querySelector(".product")
+const productApi = `https://drab-plum-oyster-hat.cyclic.app/products/${searchParams.get(
+  "id"
+)}`;
+const productContainer = document.querySelector(".product");
 
 fetch(productApi)
   .then((res) => res.json())
@@ -54,9 +56,9 @@ fetch(productApi)
                     <option value="large">Large</option>
                 </select>
                 <div class="quantity">
-                    <input type="button" value="-" class="descrease-btn">
+                    <input type="button" value="-" class="descrease-btn buttons">
                     <input type="text" name="quantity" id="quantity" value="1" min="1">
-                    <input type="button" value="+" class="increase-btn">
+                    <input type="button" value="+" class="increase-btn buttons">
                 </div>
                 <p class="amount">${product.quantity} available</p>
                 <button type="submit" class="add-to-cart">Add to cart</button>
@@ -65,5 +67,24 @@ fetch(productApi)
         `;
 
     productContainer.innerHTML = htmls;
+    //increase/decrease quantity
+    const value = document.getElementById("quantity");
+    console.log(value.value);
+    let count = 0;
+    const quantityBtn = document.querySelectorAll(".buttons");
+    quantityBtn.forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        const styles = e.currentTarget.classList;
+        if (styles.contains("descrease-btn")) {
+          if (count <= 1) {
+            count = 1;
+          } else {
+            count--;
+          }
+        } else {
+          count++;
+        }
+        value.value = count;
+      });
+    });
   });
-

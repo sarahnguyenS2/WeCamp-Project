@@ -7,12 +7,16 @@
 
 var searchParams = new URLSearchParams(window.location.search);
 
-const productApi = `https://drab-plum-oyster-hat.cyclic.app/products/${searchParams.get('id')}`;
-const productContainer = document.querySelector(".product")
-
+const productApi = `https://drab-plum-oyster-hat.cyclic.app/products/${searchParams.get(
+  "id"
+)}`;
+const productContainer = document.querySelector(".product");
+const addToCartButton = document.querySelector("button.add-to-cart");
+let product;
 fetch(productApi)
   .then((res) => res.json())
-  .then((product) => {
+  .then((data) => {
+    product = data;
     htmls = `
         <div class="product-image">
             <img src="${product.img}" alt="">
@@ -59,11 +63,27 @@ fetch(productApi)
                     <input type="button" value="+" class="increase-btn">
                 </div>
                 <p class="amount">${product.quantity} available</p>
-                <button type="submit" class="add-to-cart">Add to cart</button>
+                <button type="submit" class="add-to-cart" onclick="addToCart()">Add to cart</button>
             </div>
         </div> 
         `;
-
     productContainer.innerHTML = htmls;
   });
 
+  function addToCart() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const productIndex = cart.findIndex((item) => item.id === product.id);
+    if (productIndex !== -1) {
+      cart[productIndex].quantity += 1;
+    } else {
+      const newProduct = {
+        id: product.id,
+        name: product.title,
+        price: product.price,
+        quantity: 1,
+        img: product.img,
+      };
+      cart.push(newProduct);
+    }
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }

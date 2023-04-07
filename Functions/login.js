@@ -32,7 +32,13 @@ function resigterFunction(e) {
   } else {
     let json = JSON.stringify(user);
     localStorage.setItem(email, json);
+    error.classList.add("error");
+    error.innerHTML = "*Register successed";
   }
+
+  document.querySelector("#name").value = "";
+  document.querySelector("#register-email").value = "";
+  document.querySelector("#register-password").value = "";
 }
 // End register function
 
@@ -68,8 +74,6 @@ function loginFunction(e) {
 }
 
 // End login function
-
-// console.log(localStorage.getItem(email))
 
 //login UI after login
 const username1 = localStorage.name;

@@ -262,7 +262,7 @@ input {
 }
 
 .overlay {
-  background-image: url(/Assets/background-login.jpg);
+  background-image: url(./Asset/background-login.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 0;

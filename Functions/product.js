@@ -6,7 +6,7 @@ const pagination = document.querySelector(".pagination");
 const paginationList = document.querySelector(".pagination-list");
 // console.log(paginationList);
 const paginationA = paginationList.querySelectorAll("a");
-console.log(paginationA);
+// console.log(paginationA);
 
 //category
 function displayCategory(list) {
@@ -81,10 +81,10 @@ function displayMenuProducts(list) {
           </div>
 
           <div class="d-flex flex-justify product-icons">
-            <a href="#" class="details" data-id="${result.id}">
+            <a href="./product-detail.html?id=${result.id}" class="details">
               <i class="fa-solid fa-bars"></i>
             </a>
-            <a href="#" class="">
+            <a class="add-to-cart" data-id=${result.id} onclick="addToCart(${result.id})">
               <span><i class="fa-solid fa-cart-plus"></i></span>
             </a>
           </div>
@@ -93,21 +93,39 @@ function displayMenuProducts(list) {
     })
     .join("");
   productContainer.innerHTML = displayMenu;
-
-  productContainer.addEventListener("click", (e) => {
-    // Get the clicked product's id
-    let productId = e.target.closest(".details").dataset.id;
-    window.location.assign(`product-detail.html?id=${productId}`);
-  });
 }
 
 const productApi = "https://drab-plum-oyster-hat.cyclic.app/products/";
 fetch(productApi)
   .then((res) => res.json())
-  .then((result) => {
+  .then((data) => {
+    result = data;
     // displayMenuProducts(result);
     displayCategory(result);
     displayMenuProductsSlider(result);
     document.getElementById("firstPage").click();
-    // getIdProduct(result);
   });
+
+// Add to cart function
+let result;
+
+function addToCart(productId) {
+  const product = result.find((item) => item.id === productId);
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const productIndex = cart.findIndex((item) => item.id === product.id);
+  if (productIndex !== -1) {
+    cart[productIndex].quantity += 1;
+  } else {
+    const newProduct = {
+      id: product.id,
+      name: product.title,
+      price: product.price,
+      quantity: 1,
+      img: product.img,
+    };
+    cart.push(newProduct);
+  }
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+}
+

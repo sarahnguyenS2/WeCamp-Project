@@ -21,19 +21,11 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="./Styles/product-detail.css" />
+    <link rel="stylesheet" href="./Styles/cart.css" />
     <link rel="stylesheet" href="./Styles/home.css" />
     <title>ORGANIC FOODS</title>
   </head>
   <body>
-    <!-- HEADER -->
     <header class="header-fixed">
       <!-- HEADER -->
       <div class="container">
@@ -44,7 +36,7 @@
               <li><a href="./home.html">HOME</a></li>
               <li><a href="./product.html">SHOP</a></li>
               <li><a href="./about.html">ABOUT</a></li>
-              <li><a href="./contact.html">CONTACT</a></li>
+              <li><a href="#">CONTACT</a></li>
               <div class="login">
                 <li>
                   <a class="account" href="#"
@@ -52,18 +44,16 @@
                   ></a>
                 </li>
                 <div class="login-box">
-                  <ul id="login-box">
-                    <li>
-                      <a href="./login.html" id="login">Sign up/ Log in</a>
-                    </li>
+                  <ul>
+                    <li><a href="./login.html" id="login">Sign up/ Log in</a></li>
                     <li><a href="#" id="order">Orders</a></li>
                   </ul>
                 </div>
               </div>
               <li>
-                <a class="cart" href="./cart.html">
-                  <i class="fa-solid fa-cart-shopping cart-quantity"></i
-                ></a>
+                <a class="cart" href="#">
+                  <i class="fa-solid fa-cart-shopping cart-quantity"></i>
+                </a>
               </li>
             </ul>
           </nav>
@@ -72,70 +62,65 @@
     </header>
 
     <main id="main">
+      <!-- Banner -->
       <section class="hero-banner-about d-flex relative">
         <div class="overlay absolute"></div>
         <div class="hero-content">
-          <h2 class="hero-about-h2">HOME PRODUCT</h2>
-          <h1 class="hero-about-h1">PRODUCT DETAIL</h1>
+          <h2 class="hero-about-h2">HOME CART</h2>
+          <h1 class="hero-about-h1">MY CART</h1>
         </div>
       </section>
+      <!-- End banner -->
 
-      <!-- Product Details -->
-      <section id="product-detail" class="product-detail">
-        <div class="product">
-          <!-- <div class="product-image">
-                <img src="./Assets/apple.jpeg" alt="">
-            </div>
-            <div class="product-info">
-                <h3>Apple</h3>
-                <div class="rating">
-                    <div class="text-left">
-                        <span>5.0</span>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                    <div class="text-middle">
-                        <span class="number">100</span>
-                        <span class="text">Rating</span>
-                    </div>
-                    <div class="text-right">
-                        <span class="number">500</span>
-                        <span class="text">Sold</span>
-                    </div>
-                </div>
-
-                <div class="price">
-                    <h2>$120.00</h2>
-                </div>
-
-                <div class="description">
-                    <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until.
-                    </p>
-                </div>
-
-                <div class="input-group">
-                    <select name="size" id="size" class="size-control">
-                        <option value="small">Small</option>
-                        <option value="medium">Medium</option>
-                        <option value="large">Large</option>
-                    </select>
-                    <div class="quantity">
-                        <input type="button" value="-" class="descrease-btn">
-                        <input type="text" name="quantity" id="quantity" value="1" min="1">
-                        <input type="button" value="+" class="increase-btn">
-                    </div>
-                    <p class="amount">6 available</p>
-                    <button type="submit" class="add-to-cart">Add to cart</button>
-                </div>
-            </div> -->
+      <!-- Cart -->
+      <div class="cart-container">
+        <div class="cart-detail">
+          <table cellpadding="0" cellspacing="0" id="cart">
+            <!-- <tr>
+              <th class="image"></th>
+              <th class="product-name">Product name</th>
+              <th class="price">Price</th>
+              <th class="quantity">Quantity</th>
+              <th class="total">Total</th>
+              <th class="button"></th>
+            </tr> -->
+            <!-- <tr>
+              <td class="image">
+                <img src="./Assets/peper.jpeg" alt="" srcset="" />
+              </td>
+              <td class="product-name">Bell Pepper</td>
+              <td class="price">$4.99</td>
+              <td class="quantity">1</td>
+              <td class="total">$4.99</td>
+              <td class="button">x</td>
+            </tr> -->
+          </table>
         </div>
-      </section>
-      <!-- End product details -->
+      </div>
+      <div class="cart-total">
+        <!-- <div class="totals">
+          <div class="totals-item">
+            <label>Subtotal</label>
+            <div class="totals-value" id="cart-subtotal">71.97</div>
+          </div>
+          <div class="totals-item">
+            <label>Tax (5%)</label>
+            <div class="totals-value" id="cart-tax">3.60</div>
+          </div>
+          <div class="totals-item">
+            <label>Shipping</label>
+            <div class="totals-value" id="cart-shipping">15.00</div>
+          </div>
+          <div class="totals-item totals-item-total">
+            <label>Grand Total</label>
+            <div class="totals-value" id="cart-total">90.57</div>
+          </div>
+        </div>
+        <button class="checkout">Checkout</button> -->
+      </div>
+      <!-- End Cart -->
 
-      <!-- footer -->
+      <!-- Footer -->
       <footer class="footer">
         <div class="container">
           <div class="columns">
@@ -208,10 +193,9 @@
           </div>
         </div>
       </footer>
+      <!-- End footer -->
     </main>
-    <script src="./Functions/details.js"></script>
     <script src="./Functions/account.js"></script>
-    <script src="./Functions/cookies.js"></script>
     <script src="./Functions/cart.js"></script>
   </body>
 </html>

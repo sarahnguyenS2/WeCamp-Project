@@ -119,7 +119,7 @@ li {
   color: whitesmoke;
 } */
 .hero-banner {
-  background-image: url(/Assets/banner.jpeg);
+  background-image: url(./Asset/banner.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
   height: 650px;
@@ -128,7 +128,7 @@ li {
   justify-content: center;
 }
 .hero-banner-about {
-  background-image: url(/Assets/about.jpeg);
+  background-image: url(./Asset/about.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;

@@ -123,3 +123,9 @@
 
   font-size: 12px;
 }
+
+a.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}

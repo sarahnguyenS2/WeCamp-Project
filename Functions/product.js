@@ -81,10 +81,10 @@ function displayMenuProducts(list) {
           </div>
 
           <div class="d-flex flex-justify product-icons">
-            <a href="./product-detail.html?id=${result.id}" class="details">
+            <a href="./detail.html?id=${result.id}" class="details">
               <i class="fa-solid fa-bars"></i>
             </a>
-            <a class="add-to-cart" data-id=${result.id} onclick="addToCart(${result.id})">
+            <a class="add-to-cart" id="add-to-cart-${result.id}" data-id=${result.id} onclick="addToCart(${result.id})">
               <span><i class="fa-solid fa-cart-plus"></i></span>
             </a>
           </div>
@@ -103,12 +103,11 @@ fetch(productApi)
     // displayMenuProducts(result);
     displayCategory(result);
     displayMenuProductsSlider(result);
+    // result.forEach(disableAddToCart)
     document.getElementById("firstPage").click();
   });
 
 // Add to cart function
-let result;
-
 function addToCart(productId) {
   const product = result.find((item) => item.id === productId);
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -126,6 +125,40 @@ function addToCart(productId) {
     cart.push(newProduct);
   }
   localStorage.setItem("cart", JSON.stringify(cart));
-
+  const cartDetails = JSON.parse(localStorage.getItem("cartDetails"));
+  const totalQuantity = cartDetails.cart.reduce(
+    (acc, item) => acc + item.quantity,
+    0
+  );
+  cartDetails.totalQuantity = totalQuantity;
+  localStorage.setItem("cartDetails", JSON.stringify(cartDetails));
+  calculateTotalQuantity();
 }
 
+// Update the quantity when click add to cart button
+function calculateTotalQuantity() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const totalQuantity = cart.reduce(
+    (acc, item) => acc + parseInt(item.quantity),
+    0
+  );
+  localStorage.setItem("totalQuantity", totalQuantity);
+  const cartCount = document.querySelector(".cart-count");
+  if (cartCount) {
+    cartCount.innerHTML = `[${totalQuantity}]`;
+    if (initialQuantity !== undefined) {
+      cartCount.textContent = initialQuantity;
+    }
+  }
+}
+const initialTotalQuantity = localStorage.getItem("totalQuantity") || 0;
+calculateTotalQuantity(initialTotalQuantity);
+
+// Disable add to cart button when the quantity of product is 0
+// function disableAddToCart(product) {
+//   const quantity = product.quantity;
+//   if (quantity === 0) {
+//     const addToCartLink = document.getElementById(`add-to-cart-${product.id}`);
+//     addToCartLink.classList.add("disabled");
+//   }
+// }

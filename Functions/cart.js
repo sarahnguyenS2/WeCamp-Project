@@ -18,7 +18,7 @@ function displayCart() {
     cartTotalContainer.classList.add("hide");
     return;
   } else {
-    cartTotalContainer.classList.remove("hide")
+    cartTotalContainer.classList.remove("hide");
   }
   cartTable.innerHTML = `
     <tr>
@@ -53,6 +53,18 @@ function displayCart() {
   const tax = subtotal * 0.1;
   const shipping = 15.0;
   const total = subtotal + tax + shipping;
+  // Save cart detail to localStorage
+  const cartItems = [...cart];
+  const cartDetails = {
+    cart: cartItems,
+    subtotal: subtotal,
+    tax: tax,
+    shipping: shipping,
+    total: total,
+    totalQuantity: parseInt(totalQuantity)
+  };
+  const cartDetailsString = JSON.stringify(cartDetails);
+  localStorage.setItem("cartDetails", cartDetailsString);
 
   const totalsHtml = `
     <div class="totals">
@@ -79,7 +91,7 @@ function displayCart() {
     </div>
     <button class="checkout">Checkout</button>
   `;
-
+  
   cartTotalContainer.innerHTML = totalsHtml;
 }
 
@@ -105,10 +117,10 @@ function updateQuantity(index, quantity) {
 // Check if user has logged in
 const checkoutButton = document.querySelector(".checkout");
 checkoutButton.addEventListener("click", () => {
-  const user = sessionStorage.getItem("loginEmail")
-  if(user) {
-    window.location.assign("checkout.html")
+  const user = sessionStorage.getItem("loginEmail");
+  if (user) {
+    window.location.assign("checkout.html");
   } else {
-    window.location.assign("login.html")
+    window.location.assign("login.html");
   }
-})
+});

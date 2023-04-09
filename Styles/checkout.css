@@ -1,0 +1,132 @@
+:root {
+  --grey: #d2d2d2;
+}
+
+h2 {
+  margin: 50px 80px 15px;
+}
+
+.checkout-container {
+  display: flex;
+  margin: 0 80px;
+}
+/* Billing details */
+
+.bill-details {
+  width: 60%;
+}
+
+label {
+  font-size: 14px;
+}
+input,
+select {
+  height: 50px;
+  margin: 15px 0;
+  border: 0.5px solid var(--grey);
+  outline: none;
+  padding: 15px;
+}
+.firstname,
+.lastname,
+.city,
+.phone {
+  display: inline-block;
+  width: 46%;
+  margin-right: 20px;
+  vertical-align: top;
+}
+
+.firstname label,
+.lastname label,
+.city label,
+.phone label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.firstname input,
+.lastname input,
+.city input,
+.phone input {
+  display: block;
+  width: 100%;
+}
+
+#state {
+  width: 95.8%;
+  margin-right: 20px;
+}
+
+label.address {
+  display: block;
+  width: 100%;
+}
+.address {
+  width: 46%;
+  margin-right: 20px;
+}
+
+/* Cart total */
+.cart-total {
+  width: 40%;
+  margin-left: 20px;
+}
+h3 {
+  margin: 30px 20px 25px;
+}
+.totals {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  border: 0.5px solid var(--grey);
+}
+
+.totals-item {
+  width: 85%;
+  margin-bottom: 10px;
+}
+
+.totals-item label {
+  float: left;
+  width: 40%;
+  margin-left: 20px;
+  text-align: left;
+}
+
+.shipping, #cart-shipping {
+    padding-bottom: 15px;
+    border-bottom: 0.5px solid var(--grey);
+}
+
+#cart-total {
+    font-weight: 600;
+}
+
+.totals-item .totals-value {
+  float: left;
+  width: 45%;
+  text-align: right;
+}
+
+.column {
+  padding: 0;
+}
+
+.checkout {
+  margin-left: 85px;
+  border: 0;
+  width: 250px;
+  border: 0;
+  padding: 6px 25px;
+  background-color: var(--green);
+  color: #fff;
+  font-size: 16px;
+  border-radius: 50px;
+}
+
+.checkout:hover {
+  background-color: #fff;
+  outline: 1px solid var(--green);
+  color: var(--green);
+}

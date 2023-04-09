@@ -91,6 +91,9 @@ function loginFunction(e) {
       case "detail":
         window.location.href = "detail.html";
         break;
+      case "checkout":
+        window.location.href = "checkout.html";
+        break;
       default:
         window.location.href = "home.html";
     }

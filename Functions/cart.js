@@ -121,6 +121,6 @@ checkoutButton.addEventListener("click", () => {
   if (user) {
     window.location.assign("checkout.html");
   } else {
-    window.location.assign("login.html");
+    window.location.assign("login.html?redirect=checkout");
   }
 });

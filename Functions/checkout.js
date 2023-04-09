@@ -54,7 +54,7 @@ function validateForm() {
     if (isEmpty) {
       alert("Please fill in all the required fields.");
     } else {
-      // form.submit();
-      // window.location.assign("order.html")
+      form.submit();
+      window.location.assign("order.html")
     }
   }

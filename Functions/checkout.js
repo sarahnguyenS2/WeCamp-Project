@@ -42,7 +42,8 @@ submitButton.addEventListener("click", () => {
 
 function validateForm() {
     var form = document.querySelector(".checkout-form");
-    var inputs = form.getElementsByTagName("input[required]");
+    var inputs = form.querySelectorAll("input[required]");
+    console.log(inputs)
     var isEmpty = false;
     for (var i = 0; i < inputs.length; i++) {
       if (inputs[i].value.trim() === "") {
@@ -53,7 +54,7 @@ function validateForm() {
     if (isEmpty) {
       alert("Please fill in all the required fields.");
     } else {
-      form.submit();
-      window.location.assign("order.html")
+      // form.submit();
+      // window.location.assign("order.html")
     }
   }

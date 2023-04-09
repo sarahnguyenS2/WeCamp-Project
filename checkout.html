@@ -4,7 +4,234 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./Styles/home.css" />
+    <link rel="stylesheet" href="./Styles/checkout.css" />
+    <title>ORGANIC FOODS</title>
   </head>
-  <body></body>
+  <body>
+    <!-- Header -->
+    <header class="header-fixed">
+      <div class="container">
+        <div class="d-flex header">
+          <a class="header-branch" href="./home.html">Organic Foods</a>
+          <nav class="nav">
+            <ul class="header-nav d-flex">
+              <li><a href="./home.html">HOME</a></li>
+              <li><a href="./product.html">SHOP</a></li>
+              <li><a href="./about.html">ABOUT</a></li>
+              <li><a href="./contact.html">CONTACT</a></li>
+              <div class="login">
+                <li>
+                  <a class="account" href="#"
+                    ><i class="fa-solid fa-user-tie"></i
+                  ></a>
+                </li>
+                <div class="login-box" id="login-box">
+                  <ul>
+                    <li>
+                      <a href="./login.html" id="login">Sign up/ Sign in</a>
+                    </li>
+                    <li><a href="./order.html" id="order">Orders</a></li>
+                  </ul>
+                </div>
+              </div>
+              <li>
+                <a class="cart" href="./cart.html">
+                  <i class="fa-solid fa-cart-shopping cart-quantity"></i>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <!-- End header -->
+
+    <main class="main">
+      <!-- Banner -->
+      <section class="hero-banner-about d-flex relative">
+        <div class="overlay absolute"></div>
+        <div class="hero-content">
+          <h2 class="hero-about-h2">HOME CHECKOUT</h2>
+          <h1 class="hero-about-h1">CHECK OUT</h1>
+        </div>
+      </section>
+      <!-- End banner -->
+
+      <!-- Checkout -->
+      <h2>Billing Details</h2>
+      <div class="checkout-container">
+        <div class="bill-details">
+          <form action="" class="checkout-form">
+            <div class="firstname">
+              <label for="firstname"
+                >Fisrt Name<span style="color: red">*</span></label
+              >
+              <input type="text" id="firstname" name="firstname" required />
+            </div>
+            <div class="lastname">
+              <label for="lastname"
+                >Last Name<span style="color: red">*</span></label
+              >
+              <input type="text" id="lastname" name="lastname" required />
+            </div>
+            <label for="state"
+              >State/ Country<span style="color: red">*</span></label
+            >
+            <select name="state" id="state" name="state" required>
+              <option value="vietnamese">Vietnamese</option>
+              <option value="usa">USA</option>
+              <option value="japanese">Japanese</option>
+              <option value="newzealand">New Zealand</option>
+              <option value="australia">Australia</option>
+            </select>
+            <label for="address" class="address"
+              >Street Address<span style="color: red">*</span></label
+            >
+            <input
+              type="text"
+              class="address"
+              placeholder="House number and street name"
+              required
+              name="streetname"
+            />
+            <input
+              type="text"
+              placeholder="Apartment, suite, unit etc: (Optional)"
+              class="address"
+              name="apartment"
+            />
+            <div class="city">
+              <label for="city"
+                >Town/ City<span style="color: red">*</span></label
+              >
+              <input type="text" id="city" required name="city" />
+            </div>
+            <div class="phone">
+              <label for="phone">Phone<span style="color: red">*</span></label>
+              <input type="text" id="phone" required name="phone" />
+            </div>
+          </form>
+        </div>
+        <div class="cart-total">
+          <!-- <div class="totals">
+            <h3>Cart Totals</h3>
+            <div class="totals-item">
+              <label>Subtotal</label>
+              <div class="totals-value" id="cart-subtotal">71.97</div>
+            </div>
+            <div class="totals-item">
+              <label>Tax (10%)</label>
+              <div class="totals-value" id="cart-tax">3.60</div>
+            </div>
+            <div class="totals-item">
+              <label class="shipping">Shipping</label>
+              <div class="totals-value" id="cart-shipping">15.00</div>
+            </div>
+            <div class="totals-item totals-item-total">
+              <label>Grand Total</label>
+              <div class="totals-value" id="cart-total">90.57</div>
+            </div> 
+          </div> -->
+          <button type="submit" class="checkout">Buy Now</button>
+        </div>
+      </div>
+      <!-- End checkout -->
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="container">
+          <div class="columns">
+            <div class="column">
+              <div class="footer-p">
+                <h2>Vegefoods</h2>
+                <p>
+                  Far far away, behind the word mountains, far from the
+                  countries Vokalia and Consonantia
+                </p>
+              </div>
+
+              <ul class="d-flex footer-p-icons flex-justify">
+                <li>
+                  <a href=""><i class="fa-brands fa-twitter"></i></a>
+                </li>
+                <li>
+                  <a href=""><i class="fa-brands fa-facebook"></i></a>
+                </li>
+                <li>
+                  <a href=""><i class="fa-brands fa-instagram"></i></a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer-menu column">
+              <h2>Menu</h2>
+              <ul>
+                <li><a href="">Shop</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Contact Us</a></li>
+              </ul>
+            </div>
+            <div class="column">
+              <div class="">
+                <h2 class="">Help</h2>
+                <div class="d-flex footer-help">
+                  <ul>
+                    <li><a href="">Shipping Information</a></li>
+                    <li><a href="">Returns & Exchange</a></li>
+                    <li><a href="">Terms & Conditions</a></li>
+                    <li><a href="">Privacy Policy</a></li>
+                  </ul>
+                  <ul>
+                    <li><a href="">FAQs </a></li>
+                    <li><a href="">Contact</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="column footer-question">
+              <h2>Have a Questions?</h2>
+              <ul>
+                <li>
+                  <span><i class="fa-solid fa-location-dot"></i></span>
+                  <span>
+                    203 Fake St. Mountain View, San Francisco, California,
+                    USA</span
+                  >
+                </li>
+                <li>
+                  <span><i class="fa-solid fa-phone"></i></span>
+                  <span>0908.237.823</span>
+                </li>
+                <li>
+                  <span><i class="fa-solid fa-envelope"></i></span>
+                  <span>organic.food@gmail.com</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- End footer -->
+    </main>
+    <script src="./Functions/login.js"></script>
+    <script src="./Functions/account.js"></script>
+    <script src="./Functions/checkout.js"></script>
+    <script src="./Functions/logout.js"></script>
+  </body>
 </html>

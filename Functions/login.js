@@ -1,3 +1,13 @@
+/*
+  NAB Innovation Center Vietnam
+  Program: WeCamp batch 2
+  Assessment: Assignment 1
+  Authors: Hao Nguyen
+  Created  date: dd/mm/yyyy (e.g. 31/07/2023)
+  Last modified: 09/04/2023
+  Acknowledgement: Acknowledge the resources that you use here. 
+*/
+
 // UI
 const registerButton = document.querySelector("#register");
 const loginButton = document.querySelector("#login");
@@ -57,13 +67,33 @@ function loginFunction(e) {
     error.classList.add("error");
     error.innerHTML = "*Wrong email or password";
   } else if (email == data.email && password == data.password) {
-    // console.log(currentUrl())
-    // if(currentUrl() == "home.html") {
-    //   window.location.assign("home.html")
-    // }
-    // else window.location.assign("checkout.html")
-    window.location.assign("home.html");
-    data.status = "true";
+    var currentUrl = window.location.href;
+    var redirectParam = new URLSearchParams(window.location.search).get(
+      "redirect"
+    );
+    sessionStorage.setItem("currentLocation", currentUrl);
+    switch (redirectParam) {
+      case "home":
+        window.location.href = "home.html";
+        break;
+      case "about":
+        window.location.href = "about.html";
+        break;
+      case "product":
+        window.location.href = "product.html";
+        break;
+      case "contact":
+        window.location.href = "contact.html";
+        break;
+      case "cart":
+        window.location.href = "cart.html";
+        break;
+      case "detail":
+        window.location.href = "detail.html";
+        break;
+      default:
+        window.location.href = "home.html";
+    }
     let json = JSON.stringify(data);
     localStorage.setItem(email, json);
     sessionStorage.setItem("loginEmail", email);

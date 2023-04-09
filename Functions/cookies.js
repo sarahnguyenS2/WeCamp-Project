@@ -1,6 +1,5 @@
 const getCookie = (name) => {
   const value = " " + document.cookie;
-  console.log("value", `==${value}==`);
   const parts = value.split(" " + name + "=");
   return parts.length < 2 ? undefined : parts.pop().split(";").shift();
 };

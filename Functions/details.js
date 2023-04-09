@@ -3,7 +3,7 @@
   Program: WeCamp batch 2
   Assessment: Assignment 1
   Authors: Hao Nguyen
-  Created  date: dd/mm/yyyy (e.g. 31/07/2023)
+  Created  date: 04/04/2023
   Last modified: 09/04/2023
   Acknowledgement: https://github.com/aroraayush/nested-comments-html
 */
@@ -200,13 +200,6 @@ document.addEventListener("DOMContentLoaded", () => {
     renderComments();
   }
 
-  // Add event listener to the Add button
-  // addButton.addEventListener("click", () => {
-  //   const username = document.getElementById("username").value;
-  //   const content = document.getElementById("comment").value;
-  //   addComment(username, content, null);
-  // });
-
   // Add event listener to the comments list
   commentsList.addEventListener("click", (event) => {
     const target = event.target;
@@ -307,7 +300,6 @@ const renderComments = () => {
 
 // Function to add a new comment
 const addComment = (username, content, parentId) => {
-  console.log(content)
   if (!username || !content) {
     alert("Please enter a username and comment!");
     return;

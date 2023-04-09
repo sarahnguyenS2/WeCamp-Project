@@ -7,6 +7,7 @@
 - **Authors:** Thanh Hao & Hoai Diem
 - **Created  date:** 25/03/2023
 - **Last modified:** 09/04/2023
+- **Website:** [ORGANIC FOODS](https://main--candid-pie-0269ca.netlify.app/)
 
 ## List of requirements and tasks done
 
@@ -29,8 +30,8 @@
      - Checkout page.
 - [x] Feel free to use any kinds of data (JSON file) or generating themselves using [Mockaroo](https://www.mockaroo.com/) or any sites that you are familiar with.
  - We write an API using JSON-server and deploy it using [Cyclic](https://cyclic.sh/).
-    - Source file API: [Product API](https://github.com/sarahnguyenS2/Product-API).
-    - Link deploy: https://drab-plum-oyster-hat.cyclic.app
+    - Source file API: [Source Product API](https://github.com/sarahnguyenS2/Product-API).
+    - Link deploy: [Product API](https://drab-plum-oyster-hat.cyclic.app/products)
 
 ### Medium (20 points)
 - [x] A list of product items in one of a page (10 points).
@@ -41,7 +42,7 @@
 - [x] A notification to tell the users to accept the page cookies (3 points).
  - Accept cookies notification will appear as soon as you open the home page.
 - [x] A nested comment for users to upload their comment (7 points).
- - The comment section is in the last of the product detail page.
+ - The comment section is at the last of the product detail page.
 - [x] Use any kinds of storage to store the users information in log in. For example: click on the button login and you can hard code the username and store it in local storage or session storage. (2 points)
  - We use the `localStorage` to store the users' information in registration and login.
  - Use `sessionStorage` to store the login email of the user for logout.
@@ -58,7 +59,7 @@
  - We use `localStorage` to store the information comment of the users.
  - When the page is loaded, if there have any comment in localStorage, it will be rendered.
   ![image](https://user-images.githubusercontent.com/91973283/230776865-a358fe94-6611-416c-aac9-ef629a1a4bb8.png)
- > <sub> This is the box for the user to input their comment, and when they click the `Add` button the comment will be rendered. (User must fill the username and the content of the comment or the alert of error will appear.) </sub>
+ > <sub> This is the box for the user to input their comment, and when they click the `Add` button the comment will be rendered. (User must fill in the username and the content of the comment or the alert of error will appear.) </sub>
  - The comment added by this box is the level 1 comment and put in the `commentList`.
  ![image](https://user-images.githubusercontent.com/91973283/230776900-cf29fc07-f92a-4bf9-a1b3-4fa088ec63dd.png)
  - If you click the button `like` or `dislike` the number of them will increase. 
@@ -69,7 +70,7 @@
  ![image](https://user-images.githubusercontent.com/91973283/230777899-7ce47eee-e345-43ee-8475-dcd9cd9cfb0f.png)
 
  **The flow of code**
-- When the user click the `Add` button, the code will create a new object and save it to localStorage, it includes:
+- When the user clicks the `Add` button, the code will create a new object and save it to localStorage, it includes:
   - `id`: the length of the comment array in the localStorage.
   - `username`: the username that the user input in the `username` field.
   - `content`: the content of the comment that the user input in the box.
@@ -82,8 +83,10 @@
 - The level of comment will be divided by their id.
 
 ## Drawbacks and bugs in the website
-1. In the list of products, it has the `quantity` properly in it. And it may have some products with a quantity is 0, but when you click the `Add to cart` button, it still is added to the cart.
+1. In the list of products, it has the `quantity` property. And it may have some products with a quantity is 0, but when you click the `Add to cart` button, it still is added to the cart.
 2. If you increase the quantity of product in the `details.html` page, and click `Add to cart` it just adds one product to the cart.
-3. The nested comment when you always reply the comment before it, make a pyramid of comment like this:
+3. The nested comment when you always reply to the comment before it, make a pyramid of comment like this:
 ![image](https://user-images.githubusercontent.com/91973283/230778187-6d40ae13-1591-4535-81eb-e0950c69de9c.png)
 4. The performance of the `product.html` page and `details.html` is quite low (maybe a few seconds) because of the API.
+5. The first time you go to the `product.html` and click `Add to cart` button, the quantity in the cart icon will not change. But when you refresh and click it, it will increase when you click.
+6. Our website has **no responsiveness**.
